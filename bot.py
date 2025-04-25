@@ -141,5 +141,13 @@ async def listframes(ctx, user: discord.Member = None):
         view=FrameView(user)
     )
 
+@bot.command()
+async def pickframe(ctx, user: discord.Member = None):
+    user = user or ctx.author
+    await ctx.send(
+        f"🔽 Please pick a frame to apply to {user.display_name}'s avatar:",
+        view=FrameView(user)
+    )
+
 
 bot.run(TOKEN)
